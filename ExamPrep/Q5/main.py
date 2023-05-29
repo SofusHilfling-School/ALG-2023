@@ -49,8 +49,9 @@ g.addEdge(2, 3, 1)
 
 g.addNode(4)
 
-print([k for k in g.vertices.keys()])
-g.printGraph()
+# print keys 
+# print([k for k in g.vertices.keys()])
+
 
 sp = Dijkstra(g, 0)
 pathTo3 = sp.pathTo(3)
