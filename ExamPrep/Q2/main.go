@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	bubbleSortExample()
+	topDownMergeSortExample()
 }
 
 func bubbleSortExample() {
@@ -32,7 +32,7 @@ func insertionSortExample() {
 
 func topDownMergeSortExample() {
 	// Example usage
-	arr := []int{9, 3, 7, 5, 1, 8, 2, 6, 4}
+	arr := []int{9, 3, 7, 5, 1, 8, 2, 6, 10, 4}
 
 	fmt.Println("Merge Sort -- Top Down")
 	fmt.Println("Original array:", arr)
@@ -44,7 +44,7 @@ func topDownMergeSortExample() {
 
 func bottomUpMergeSortExample() {
 	// Example usage
-	arr := []int{9, 3, 7, 5, 1, 8, 2, 6, 4}
+	arr := []int{9, 3, 7, 5, 1, 8, 2, 6, 10, 4}
 
 	fmt.Println("Merge Sort -- Bottom Up")
 	fmt.Println("Original array:", arr)
@@ -56,9 +56,9 @@ func bottomUpMergeSortExample() {
 
 func notInplaceMergeSortExample() {
 	// Example usage
-	arr := []int{9, 3, 7, 5, 1, 8, 2, 6, 4}
+	arr := []int{9, 3, 7, 5, 1, 8, 2, 6, 10, 4}
 
-	fmt.Println("Merge Sort -- Bottom Up")
+	fmt.Println("Merge Sort -- Not in-place Top Down")
 	fmt.Println("Original array:", arr)
 
 	result := MergeSortNotInplace(arr)

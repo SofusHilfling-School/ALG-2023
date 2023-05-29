@@ -14,7 +14,9 @@ func MergeSortNotInplace(arr []int) []int {
 	right := MergeSortNotInplace(arr[mid:]) // Recursive call to sort the right half
 
 	// Merge the sorted halves
-	return mergeNotInplace(left, right)
+	merge := mergeNotInplace(left, right)
+	fmt.Println(merge)
+	return merge
 }
 
 func mergeNotInplace(left, right []int) []int {
