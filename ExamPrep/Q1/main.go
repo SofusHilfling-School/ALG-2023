@@ -3,22 +3,22 @@ package main
 import "fmt"
 
 func main() {
-	
+	exponential()
 }
 
 func constant() {
 	arr := []string{"here", "is", "a", "list", "of", "strings"}
 
-	fmt.Println(arr[2])
+	fmt.Println(arr[3])
 }
 
 func logarithmic() {
 	arr := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16}
 
 	mid := len(arr) / 2
-	for mid <= 0 {
+	for mid > 0 {
+		fmt.Println(mid)
 		mid = mid / 2
-		fmt.Println("", mid)
 	}
 }
 
@@ -59,7 +59,7 @@ func quadratic2() {
 	n := 10
 	for i := 0; i < n; i++ {
 		for j := 0; j < n; j++ {
-			fmt.Print(i*j)
+			fmt.Print(i)
 		}
 	}
 	fmt.Println()
@@ -75,9 +75,9 @@ func quadraticMemory() {
 	for i := 0; i < n; i++ {
 		tmp := make([]int, n)
 		for j := 0; j < n; j++ {
-			tmp = append(tmp, j*i)
+			tmp[j] = (j + 1) * (i + 1)
 		}
-		result = append(result, tmp)
+		result[i] = tmp
 	}
 	fmt.Println(result)
 }
@@ -85,12 +85,13 @@ func quadraticMemory() {
 // 2^n
 func exponential() {
 	var fibonacci func(n int) int
-	fibonacci := func(n int) int {
+	fibonacci = func(n int) int {
 		if n <= 1 {
 			return n
 		}
 		return fibonacci(n-1) + fibonacci(n-2)
 	}
 
-	fmt.Println(fibonacci(10))
+	n := 10
+	fmt.Println(fibonacci(n))
 }

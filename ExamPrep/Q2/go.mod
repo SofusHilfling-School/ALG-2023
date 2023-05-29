@@ -1,3 +1,3 @@
-module alg/exam/q1
+module alg/exam/q2
 
 go 1.20
