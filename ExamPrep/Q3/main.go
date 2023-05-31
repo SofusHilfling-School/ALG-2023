@@ -3,7 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	BinarySearchTreeExample()
+	LinearSearchExample()
+	//BinarySearchExample()
+	//BinarySearchTreeExample()
 }
 
 func LinearSearchExample() {

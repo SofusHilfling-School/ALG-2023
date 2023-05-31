@@ -3,7 +3,11 @@ package main
 import "fmt"
 
 func main() {
-	topDownMergeSortExample()
+	bubbleSortExample()
+	//insertionSortExample()
+	//topDownMergeSortExample()
+	//bottomUpMergeSortExample()
+	//notInplaceMergeSortExample()
 }
 
 func bubbleSortExample() {

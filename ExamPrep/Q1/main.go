@@ -3,15 +3,24 @@ package main
 import "fmt"
 
 func main() {
-	exponential()
+	constant()
+	//logarithmic()
+	//linear()
+	//linear2()
+	//quadratic()
+	//quadratic2()
+	//quadraticMemory()
+	//exponential()
 }
 
+// 1
 func constant() {
 	arr := []string{"here", "is", "a", "list", "of", "strings"}
 
 	fmt.Println(arr[3])
 }
 
+// log n
 func logarithmic() {
 	arr := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16}
 

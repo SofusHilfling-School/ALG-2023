@@ -6,43 +6,45 @@ import (
 
 func main() {
 	g := NewGraph()
-	g.AddEdge(3, 1, 1)
-	g.AddEdge(1, 3, 1) //
+	AddEdgeOneWay(g)
+	//MakeUndirected(g)
 
-	g.AddEdge(3, 5, 1)
-	g.AddEdge(5, 3, 1) //
-
-	g.AddEdge(5, 2, 1)
-	g.AddEdge(2, 5, 1) //
-
-	g.AddEdge(5, 4, 1)
-	g.AddEdge(4, 5, 1) //
-
-	g.AddEdge(4, 6, 1)
-	g.AddEdge(6, 4, 1) //
-
-	g.AddEdge(6, 8, 1)
-	g.AddEdge(8, 6, 1) //
-
-	g.AddEdge(1, 7, 1)
-	g.AddEdge(7, 1, 1) //
-
-	g.AddEdge(2, 6, 1)
-	g.AddEdge(6, 2, 1) //
-
-	g.AddEdge(7, 8, 1)
-	g.AddEdge(8, 7, 1) //
-
-	g.AddEdge(7, 2, 1)
-	g.AddEdge(2, 7, 1) //
-
-	g.AddVertex(6)
+	g.AddVertex(9)
 
 	r := DepthFirstSearch(g, 0)
 	MakePath(0, 5, r)
+	MakePath(3, 2, r)
 
 	r = BreadthFirstSearch(g, 0)
 	MakePath(0, 5, r)
+}
+
+func AddEdgeOneWay(g *Graph) {
+	g.AddEdge(0, 1, 1)
+	g.AddEdge(3, 1, 1)
+	g.AddEdge(3, 5, 1)
+	g.AddEdge(5, 2, 1)
+	g.AddEdge(5, 4, 1)
+	g.AddEdge(4, 6, 1)
+	g.AddEdge(6, 8, 1)
+	g.AddEdge(1, 7, 1)
+	g.AddEdge(2, 6, 1)
+	g.AddEdge(7, 8, 1)
+	g.AddEdge(7, 2, 1)
+}
+
+func MakeUndirected(g *Graph) {
+	g.AddEdge(1, 0, 1) //
+	g.AddEdge(1, 3, 1) //
+	g.AddEdge(5, 3, 1) //
+	g.AddEdge(2, 5, 1) //
+	g.AddEdge(4, 5, 1) //
+	g.AddEdge(6, 4, 1) //
+	g.AddEdge(8, 6, 1) //
+	g.AddEdge(7, 1, 1) //
+	g.AddEdge(6, 2, 1) //
+	g.AddEdge(8, 7, 1) //
+	g.AddEdge(2, 7, 1) //
 }
 
 func DepthFirstSearch(g *Graph, start int) map[int]Edge {
